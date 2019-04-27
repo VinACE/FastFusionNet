@@ -23,7 +23,7 @@ from qa.general_utils import normalize_text, build_embedding, load_glove_vocab, 
 parser = argparse.ArgumentParser(
     description='Preprocessing data files, about 10 minitues to run.'
 )
-parser.add_argument('--wv_file', default='data/glove/glove.840B.300d.txt',
+parser.add_argument('--wv_file', default='/content/datasets/original/Glove/glove.840B.300d.txt',
                     help='path to word vector file.')
 parser.add_argument('--wv_dim', type=int, default=300,
                     help='word vector dimension.')
