@@ -169,7 +169,9 @@ writer = SummaryWriter(save_dir)
 
 def main():
     log.info('[program starts.]')
+    print("Iam here............")
     train, dev, train_y, dev_y, embedding, opt, meta = load_data(vars(args), log)
+    print("I passed this stage")
     # hold out original dev set
     log.info('[Data loaded.]')
     log.info('train_size: {}, dev_size: {}'.format(len(train), len(dev)))
