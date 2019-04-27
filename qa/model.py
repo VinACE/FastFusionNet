@@ -93,9 +93,9 @@ class DocReaderModel(object):
 
         # Transfer to GPU
         if self.opt['cuda']:
-            inputs = [Variable(e.cuda(async=True)) if torch.is_tensor(e) else e for e in ex[:10]]
-            target_s = Variable(ex[10].cuda(async=True))
-            target_e = Variable(ex[11].cuda(async=True))
+            inputs = [Variable(e.cuda()) if torch.is_tensor(e) else e for e in ex[:10]]
+            target_s = Variable(ex[10].cuda())
+            target_e = Variable(ex[11].cuda())
         else:
             inputs = [Variable(e) if torch.is_tensor(e) else e for e in ex[:10]]
             target_s = Variable(ex[10])
