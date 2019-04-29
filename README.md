@@ -41,7 +41,7 @@ mkdir -p $SAVE
 python train.py --model_type fusionnet --hidden_size 125 --end_gru \
     --dropout_rnn 0.2 --data_suffix fusion --save_dir $SAVE \
     -lr 0.001 -gc 20  -e 100 --batch_size 32 \
-    --rnn_type sru --fusion_reading_layers 2 --fusion_understanding_layers 2 --fusion_final_layers 2
+    --rnn_type sru --fusion_reading_layers 2 --fusion_understanding_layers 2 --fusion_final_layers 2 --epoch 2
 ```
 
 To train FusionNet [(Huang et al., ICLR 2018)](https://arxiv.org/abs/1711.07341):
