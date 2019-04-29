@@ -107,7 +107,7 @@ class DocReaderModel(object):
         # Compute loss and accuracies
         loss = F.nll_loss(score_s, target_s) + F.nll_loss(score_e, target_e)
 
-        # self.train_loss.update(loss.data[0], ex[0].size(0))
+        # self.train_loss.update(loss.data[0], ex[0].size(0)) 
         self.train_loss.update(loss.item(), ex[0].size(0))
         # warm_start
         if self.opt['warm_start'] and self.updates <= 1000:
