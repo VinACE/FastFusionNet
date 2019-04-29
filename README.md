@@ -28,6 +28,7 @@ Preprocessing the data set. This takes about 10 minutes.
 ```sh
 mkdir -p data/squad
 python prepro.py --train PATH_TO_SQAUD_TRAIN --dev PATH_TO_SQUAD_DEV
+
 python prepro.py --train ~/FastFusionNet/data/squad/train-v2.0.json --dev ~/FastFusionNet/data/squad/dev-v2.0.json 
 
 ```
