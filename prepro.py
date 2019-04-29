@@ -302,7 +302,7 @@ context_features = [[list(w) + [tf] for w, tf in zip(doc, tfs)] for doc, tfs in
                     zip(context_features, context_tf)]
 
 # tags
-vocab_tag = list(nlp.tagger.tag_names)
+vocab_tag = list(nlp.tagger.tag_names) # removed list(nlp.tagger.lables) # compatible for spacy 2 >
 context_tag_ids = token2id(context_tags, vocab_tag)
 log.info('Found {} POS tags.'.format(len(vocab_tag)))
 
