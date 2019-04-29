@@ -802,8 +802,9 @@ class MTLSTM(nn.Module):
         x_hiddens = emb(x_idx)
 
         lengths = x_mask.data.eq(0).long().sum(1).squeeze()
-        lengths = torch.as_tensor(lengths, dtype=torch.int64, device='cpu') # https://github.com/pytorch/pytorch/issues/16542
-        import pdb; pdb.set_trace()
+        # lengths = torch.as_tensor(lengths, dtype=torch.int64, device='cpu') # https://github.com/pytorch/pytorch/issues/16542
+        lengths =  torch.as_tensor(lengths, dtype=torch.int64)
+        # import pdb; pdb.set_trace()
         lens, indices = torch.sort(lengths, 0, True)
 
         output1, _ = self.rnn1(nn.utils.rnn.pack_padded_sequence(x_hiddens[indices], lens.tolist(), batch_first=True))
