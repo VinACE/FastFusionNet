@@ -800,7 +800,7 @@ class MTLSTM(nn.Module):
         # emb = self.embedding if self.training else self.eval_embed
         emb = self.embedding
         x_hiddens = emb(x_idx)
-
+        # https://github.com/pytorch/pytorch/blob/21193bf12314f9d1be5ea36cbce3162c54b35225/torch/nn/utils/rnn.py#L195
         lengths = x_mask.data.eq(0).long().sum(1).squeeze()
         # lengths = torch.as_tensor(lengths, dtype=torch.int64, device='cpu') # https://github.com/pytorch/pytorch/issues/16542
         lengths =  torch.as_tensor(lengths, dtype=torch.int64)
