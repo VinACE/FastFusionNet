@@ -143,7 +143,8 @@ class DocReaderModel(object):
 
         # Transfer to GPU
         if next(self.network.parameters()).is_cuda:
-            inputs = [Variable(e.cuda(), volatile=True) if torch.is_tensor(e) else e for e in ex[:10]]
+            # inputs = [Variable(e.cuda(), volatile=True) if torch.is_tensor(e) else e for e in ex[:10]]
+            inputs = [Variable(e.cuda()) if torch.is_tensor(e) else e for e in ex[:10]]
         else:
             inputs = [Variable(e, volatile=True) if torch.is_tensor(e) else e for e in ex[:10]]
 
